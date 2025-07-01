@@ -1,1 +1,1 @@
-const String api_url = "https://botw-compendium.herokuapp.com/api/v3/compendium/category/";
+const String apiUrl = "https://botw-compendium.herokuapp.com/api/v3/compendium/category/";
