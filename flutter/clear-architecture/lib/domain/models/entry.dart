@@ -10,7 +10,7 @@ class Entry {
   String name;
   String image;
   String description;
-  String commonLocations;
+  String commonsLocations;
   String category;
   
   Entry({
@@ -18,7 +18,7 @@ class Entry {
     required this.name,
     required this.image,
     required this.description,
-    required this.commonLocations,
+    required this.commonsLocations,
     required this.category,
   });
 
@@ -28,7 +28,7 @@ class Entry {
       'name': name,
       'image': image,
       'description': description,
-      'commonLocations': commonLocations,
+      'commonsLocations': commonsLocations,
       'category': category,
     };
   }
@@ -40,13 +40,13 @@ class Entry {
       name: map['name'] as String,
       image: map['image'] as String,
       description: map['description'] as String,
-      commonLocations: jsonEncode(map['common_locations'] ?? ['Sem localização']),
+      commonsLocations: jsonEncode(map['common_locations'] ?? ['Sem localização']),
       category: map['category'] as String,
     );
   }
 
   List<String> commonLocationConverter() {
-    return (jsonDecode(commonLocations) as List<dynamic>).map((e) => e as String).toList();
+    return (jsonDecode(commonsLocations) as List<dynamic>).map((e) => e as String).toList();
   }
 
   String toJson() => json.encode(toMap());

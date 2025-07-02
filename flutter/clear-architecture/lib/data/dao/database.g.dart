@@ -96,7 +96,7 @@ class _$AppDatabase extends AppDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Entry` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `image` TEXT NOT NULL, `description` TEXT NOT NULL, `commonLocations` TEXT NOT NULL, `category` TEXT NOT NULL, PRIMARY KEY (`id`))');
+            'CREATE TABLE IF NOT EXISTS `Entry` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `image` TEXT NOT NULL, `description` TEXT NOT NULL, `commonsLocations` TEXT NOT NULL, `category` TEXT NOT NULL, PRIMARY KEY (`id`))');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -123,7 +123,7 @@ class _$EntryDao extends EntryDao {
                   'name': item.name,
                   'image': item.image,
                   'description': item.description,
-                  'commonLocations': item.commonLocations,
+                  'commonsLocations': item.commonsLocations,
                   'category': item.category
                 }),
         _entryDeletionAdapter = DeletionAdapter(
@@ -135,7 +135,7 @@ class _$EntryDao extends EntryDao {
                   'name': item.name,
                   'image': item.image,
                   'description': item.description,
-                  'commonLocations': item.commonLocations,
+                  'commonsLocations': item.commonsLocations,
                   'category': item.category
                 });
 
@@ -157,7 +157,7 @@ class _$EntryDao extends EntryDao {
             name: row['name'] as String,
             image: row['image'] as String,
             description: row['description'] as String,
-            commonLocations: row['commonLocations'] as String,
+            commonsLocations: row['commonsLocations'] as String,
             category: row['category'] as String));
   }
 

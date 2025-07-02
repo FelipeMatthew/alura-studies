@@ -17,7 +17,7 @@ class Hyrule extends StatelessWidget {
         brightness: Brightness.dark,
         useMaterial3: true,
       ),
-      home: const CategoriesScreen(),
+      home: const Categories(),
     );
   }
 }
