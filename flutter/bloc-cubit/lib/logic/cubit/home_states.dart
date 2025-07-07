@@ -9,7 +9,18 @@ class HomeInitial extends HomeStates {}
 class HomeLoading extends HomeStates {}
 
 // ESTADO DE SUCESSO
-class HomeSuccess extends HomeStates {}
+class HomeSuccess extends HomeStates {
+  // TODOS OS STATES PODEM RECEBER INFORMAÇÕES DE ERROS AO QUAL PEGARIA E PASSARIA PARA A TELA
+
+  // PASSANDO QUE SE CASO O FETCH DE FILMES DE CERTO, VAI PEGAR ELE E PASSAR AQUI PARA O ESTADO
+  HomeSuccess(this.movies);
+
+  final List<Movie> movies;
+}
 
 // ESTADO DE ERRO
-class HomeError extends HomeStates {}
+class HomeError extends HomeStates {
+  HomeError(this.errorText);
+
+  final String errorText;
+}
